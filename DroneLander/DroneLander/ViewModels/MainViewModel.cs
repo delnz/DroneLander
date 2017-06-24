@@ -36,29 +36,34 @@ namespace DroneLander
         public double Altitude
         {
             get { return this._altitude; }
-            set { this.SetProperty(ref this._altitude, value); }
+            set { this.SetProperty(ref this._altitude, value, "AltitudeAsInt"); }
         }
 
         private double _descentRate;
         public double DescentRate
         {
             get { return this._descentRate; }
-            set { this.SetProperty(ref this._descentRate, value); }
+            set { this.SetProperty(ref this._descentRate, value, "DescentRateAsInt"); }
         }
 
         private double _velocity;
         public double Velocity
         {
             get { return this._velocity; }
-            set { this.SetProperty(ref this._velocity, value); }
+            set { this.SetProperty(ref this._velocity, value, "VelocityAsInt"); }
         }
 
         private double _fuel;
         public double Fuel
         {
             get { return this._fuel; }
-            set { this.SetProperty(ref this._fuel, value); }
+            set { this.SetProperty(ref this._fuel, value, "FuelAsInt"); }
         }
+        public int ThrustAsInt { get { return Convert.ToInt32(_thrust); } }
+        public int FuelAsInt { get { return Convert.ToInt32( _fuel); } }
+        public int DescentRateAsInt { get { return Convert.ToInt32(_descentRate); } }
+        public int VelocityAsInt { get { return Convert.ToInt32(_velocity); } }
+        public int AltitudeAsInt { get { return Convert.ToInt32(_altitude); } }
 
         private double _fuelRemaining;
         public double FuelRemaining
@@ -71,7 +76,7 @@ namespace DroneLander
         public double Thrust
         {
             get { return this._thrust; }
-            set { this.SetProperty(ref this._thrust, value); }
+            set { this.SetProperty(ref this._thrust, value, "ThrustAsInt"); }
         }
 
         private double _throttle;
